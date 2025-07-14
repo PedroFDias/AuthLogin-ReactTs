@@ -4,7 +4,7 @@ import { CircleUserRound, LockKeyhole } from 'lucide-react'
 import { ReactTyped } from "react-typed"
 import { BotaoSubmit } from '../../components/BotaoSubmit';
 import { Link } from 'react-router-dom'
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 
 export function Register(){
 
