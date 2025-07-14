@@ -1,0 +1,10 @@
+.botao{
+    color: aliceblue;
+    border: none;
+    width: 100% !important;
+    height: 55px;
+    font-size: 16px;
+    background: black;
+    outline: none;
+    margin-bottom: 10px;
+}
