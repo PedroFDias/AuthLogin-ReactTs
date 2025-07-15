@@ -20,7 +20,7 @@ export function Register(){
     return(
         <div className='divRegister'>
             <div className='leftSide'>
-                <img src="../../public/assets/img/mobile-encryption-animate.svg" alt="" />
+                <img src="/assets/img/mobile-encryption-animate.svg" alt="" />
             </div>
             <form className='form' onSubmit={aoSalvar}>
                 <h1 className='title'>Register</h1>

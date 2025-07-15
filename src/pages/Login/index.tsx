@@ -32,7 +32,7 @@ export function Login(){
     return(
         <div className='divLogin'> 
             <div className='leftSide'>
-                <img src="../../public/assets/img/mobile-encryption-animate.svg" alt="" />
+                <img src="/assets/img/mobile-encryption-animate.svg" alt="" />
             </div>
             
             <form className='form' onSubmit={submetido}>
