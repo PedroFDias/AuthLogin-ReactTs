@@ -2,7 +2,9 @@
   font-family: "Poppins", sans-serif;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -11,4 +13,41 @@ html, body, #root {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+:root {
+  --toastify-color-light: #ffffff;
+  --toastify-color-dark: #121212;
+  
+  --toastify-color-success:green;
+  --toastify-color-error: #5e2de6b7;
+
+  --toastify-icon-color-success: rgb(8, 177, 45);
+  --toastify-icon-color-error: #e62d2db7;
+
+  --toastify-toast-background: rgba(38, 38, 38, 0.85);
+  --toastify-toast-padding: 14px;
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-max-height: 800px;
+  --toastify-toast-shadow: 0px 0px 12px rgba(94, 45, 230, 0.4);
+
+  --toastify-font-family: 'Arial', sans-serif;
+  --toastify-z-index: 9999;
+
+  --toastify-text-color-light: #000000af;
+  --toastify-text-color-dark: #000000af;
+
+  --toastify-text-color-info: #ffffff;
+  --toastify-text-color-success: #ffffff;
+  --toastify-text-color-warning: #121212;
+  --toastify-text-color-error: #ffffff;
+
+  --toastify-spinner-color: #00f7ff;
+  --toastify-spinner-color-empty-area: #e0e0e0;
+
+
+  --toastify-color-progress-success: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+  --toastify-color-progress-error: #5e2de6b7;
+
+  --toastify-color-progress-bgo: 0.2;
 }
