@@ -1,21 +1,25 @@
-import './Login.css'
-import { Input } from '../../components/Input'
+import './Login.css';
+import { Input } from '../../components/Input';
 import { BotaoSubmit } from '../../components/BotaoSubmit';
-import { CircleUserRound, LockKeyhole } from 'lucide-react'
-import { ReactTyped } from "react-typed"
+import { CircleUserRound, LockKeyhole } from 'lucide-react';
+import { ReactTyped } from "react-typed";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
-import { api } from '../../services/api'
+import { api } from '../../services/api';
+import { toast } from 'react-toastify';
+import { Peca } from '../../components/PecasCaixa';
+import { Titulo } from '../../components/TituloColorido'
+import { motion } from "framer-motion";
 
-export function Login(){
+export function Login() {
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
-    async function submetido(e: React.FormEvent){
+    async function submetido(e: React.FormEvent) {
         e.preventDefault()
-        
-        try{
+
+        try {
             const response = await api.post('/login',
                 {
                     email: email,
@@ -23,46 +27,57 @@ export function Login(){
                 }
             )
             console.log('Resposta da API:', response.data);
+            toast.success("Login realizado com sucesso!")
         }
-        catch{
+        catch {
             console.log("erro")
+            toast.error("Erro ao realizado login!")
         }
     }
 
-    return(
-        <div className='divLogin'> 
-            <div className='leftSide'>
-                <img src="/assets/img/mobile-encryption-animate.svg" alt="" />
-            </div>
-            
-            <form className='form' onSubmit={submetido}>
-                <h1 className='title'>Login</h1>
-                <ReactTyped
-                    strings={['Olá, faça o login para continuar.']}
-                    typeSpeed={50}
-                />
-                <div className='inputs'>
-                    <Input onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email' icon={<CircleUserRound className='icon' color='rgb(11, 134, 172)'></CircleUserRound>}/>
-                    <Input onChange={(e) => setSenha(e.target.value)} type='password' placeholder='Senha' icon={<LockKeyhole className='icon' color='rgb(11, 134, 172)'></LockKeyhole>}></Input>
-                    Sem conta?
-                <Link className='linkRegistrar' rel="icon" to="/register"> Criar agora!</Link>
+    return (
+        <motion.div
+            initial={{ scaleY: 1.1, opacity: 1 }}
+            animate={{ scaleY: 1, opacity: 1 }}
+            transition={{ duration: 0.5, ease: 'backOut' }}
+            style={{ transformOrigin: 'center' }}
+            className='divLogin'>
+            <div className='divInterna'>
+                <div className='leftSide'>
+                    <img src="/assets/img/mobile-encryption-animate.svg" alt="" />
                 </div>
-                <BotaoSubmit type='submit' texto='Logar'/>
-            </form>
+                <form className='form' onSubmit={submetido}>
+                    <Titulo titulo="Login" />
+
+                    <ReactTyped
+                        strings={['Olá, faça o login para continuar.']}
+                        typeSpeed={50}
+                    />
+                    <div className='inputs'>
+                        <Input onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email' icon={<CircleUserRound className='icon' color='rgb(11, 134, 172)'></CircleUserRound>} />
+                        <Input onChange={(e) => setSenha(e.target.value)} type='password' placeholder='Senha' icon={<LockKeyhole className='icon' color='rgb(11, 134, 172)'></LockKeyhole>}></Input>
+
+                    </div>
+                    <div className='semConta'>
+                        Sem conta?
+                        <Link className='linkRegistrar' rel="icon" to="/register">Criar agora!</Link>
+                    </div>
+                    <BotaoSubmit type='submit' texto='Logar' />
+                </form>
+            </div>
+
+            <Peca forma='M5,50 L95,50 L95,95 L5,95 Z' cor='#5e2de6b7' />
+            <Peca forma='M5,5 L95,5 L95,50 L5,50 Z' cor='rgb(11, 134, 172)' />
+
+            {/**<Peca forma='M0,0 L18,29.5 L0,39 Z' direcaoX={[0,-10,0]} direcaoY={[0,-5,0]} />
+            <Peca forma='M0,40 L19,30 L50,80 L40,100 L0,100Z' direcaoX={[0,-10,0]} direcaoY={[0,10,0]} />
+            <Peca forma='M41,100 L50.5,81 L74,85 L87,100 Z' direcaoY={[0,10,0]}/>
+            <Peca forma='M88,100 L75,85 L100,79 L100,100 ' direcaoX={[0,10,0]} direcaoY={[0,10,0]}/>
+            <Peca forma='M0.5,0 L50,30 L100,0.5 Z' direcaoY={[0,-5,0]} />
+            <Peca forma='M100,1.5 L100,30 L74,17 Z' direcaoX={[0,10,0]} />*/}
+
+        </motion.div>
 
 
-            <svg className="fundoCiano"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M0,0 L50,80 L74,85 L100,77 L100,30 L70,5 L100,5 L100,100 L0,100 Z "
-                    fill="rgb(11, 162, 172)"
-                />
-            </svg>
-
-
-
-        </div>
     );
 }
