@@ -3,7 +3,7 @@ import { Input } from '../../components/Input';
 import { CircleUserRound, LockKeyhole, Mail } from 'lucide-react'
 import { ReactTyped } from "react-typed"
 import { BotaoSubmit } from '../../components/BotaoSubmit';
-import { data, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import { api } from '../../services/api'
 import { toast } from 'react-toastify';
