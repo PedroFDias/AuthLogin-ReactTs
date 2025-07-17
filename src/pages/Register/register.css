@@ -45,3 +45,10 @@ div{
         width: 100% !important;
     }
 }
+
+.linkPagina{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+}

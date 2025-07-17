@@ -54,15 +54,18 @@ export function Login() {
                         typeSpeed={50}
                     />
                     <div className='inputs'>
-                        <Input onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email' icon={<CircleUserRound className='icon' color='rgb(11, 134, 172)'></CircleUserRound>} />
-                        <Input onChange={(e) => setSenha(e.target.value)} type='password' placeholder='Senha' icon={<LockKeyhole className='icon' color='rgb(11, 134, 172)'></LockKeyhole>}></Input>
+                        <Input delay={0.3} onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email' icon={<CircleUserRound className='icon' color='rgb(11, 134, 172)'></CircleUserRound>} />
+                        <Input delay={0.5} onChange={(e) => setSenha(e.target.value)} type='password' placeholder='Senha' icon={<LockKeyhole className='icon' color='rgb(11, 134, 172)'></LockKeyhole>}></Input>
 
                     </div>
-                    <div className='semConta'>
-                        Sem conta?
+                    <motion.div className='semConta'
+                        initial={{opacity:0, scale:0.9}}
+                        animate={{opacity:1, scale:1}}
+                        transition={{duration:0.5, delay:0.8}}>
+                        <span>Sem conta?&nbsp;</span>
                         <Link className='linkRegistrar' rel="icon" to="/register">Criar agora!</Link>
-                    </div>
-                    <BotaoSubmit type='submit' texto='Logar' />
+                    </motion.div>
+                    <BotaoSubmit delay={1} type='submit' texto='Logar' />
                 </form>
             </div>
 

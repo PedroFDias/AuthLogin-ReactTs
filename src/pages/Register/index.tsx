@@ -42,28 +42,39 @@ export function Register() {
         <motion.div 
             initial={{ scaleY: 0.9, opacity: 1 }}
             animate={{ scaleY: 1, opacity: 1 }}
-            transition={{ duration: 0.5, ease: 'backOut' }}
+            transition={{ duration: 0.5}}
             style={{ transformOrigin: 'center' }} 
             className='divRegister'
             >
             <div className='divInterna'>
-                <div className='leftSide'>
+                <motion.div 
+                    initial={{opacity: 0, scale:0.9}}
+                    animate={{opacity:1, scale:1}}
+                    transition={{ duration: 1, delay:0.3, ease: 'backOut' }}
+                    className='leftSide'>
                     <img src="/assets/img/mobile-encryption-animate.svg" alt="" />
-                </div>
+                </motion.div>
+
                 <form className='form' onSubmit={Registrar}>
-                    <Titulo titulo='Registrar' />
+                    <Titulo titulo='Registrar'  />
                     <ReactTyped
                         strings={['Olá, preencha o formulário abaixo e registre-se.']}
                         typeSpeed={50}
                     />
                     <div className='inputs'>
-                        <Input onChange={(e) => setNome(e.target.value)} type='nome' placeholder='Nome' icon={<CircleUserRound className='icon' color='rgb(11, 134, 172)'></CircleUserRound>}></Input>
-                        <Input onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email' icon={<Mail className='icon' color='rgb(11, 134, 172)'></Mail>} />
-                        <Input onChange={(e) => setSenha(e.target.value)} type='password' placeholder='Senha' icon={<LockKeyhole className='icon' color='rgb(11, 134, 172)'></LockKeyhole>}></Input>
-                        Já é cadastrado?
-                        <Link className='linkRegistrar' rel="icon" to="/"> Logar agora!</Link>
+                        <Input delay={0.3} onChange={(e) => setNome(e.target.value)} type='nome' placeholder='Nome' icon={<CircleUserRound className='icon' color='rgb(11, 134, 172)'></CircleUserRound>}></Input>
+                        <Input delay={0.5} onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email' icon={<Mail className='icon' color='rgb(11, 134, 172)'></Mail>} />
+                        <Input delay={0.7} onChange={(e) => setSenha(e.target.value)} type='password' placeholder='Senha' icon={<LockKeyhole className='icon' color='rgb(11, 134, 172)'></LockKeyhole>}></Input>
                     </div>
-                    <BotaoSubmit type='submit' texto='Registrar-se' />
+                    <motion.div 
+                        initial={{opacity:0, scale:0.9}}
+                        animate={{opacity:1, scale:1}}
+                        transition={{duration:0.5, delay:0.9}}
+                        className='linkPagina'>
+                        <span>Já é cadastrado?&nbsp;</span>
+                        <Link rel="icon" to="/">Logar agora!</Link>
+                    </motion.div>
+                    <BotaoSubmit delay={1.2} type='submit' texto='Registrar-se' />
 
                 </form>
 
