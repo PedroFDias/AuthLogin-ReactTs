@@ -39,7 +39,7 @@ export function Login() {
         <motion.div
             initial={{ scaleY: 1.1, opacity: 1 }}
             animate={{ scaleY: 1, opacity: 1 }}
-            transition={{ duration: 0.5, ease: 'backOut' }}
+            transition={{ duration: 0.5 }}
             style={{ transformOrigin: 'center' }}
             className='divLogin'>
             <div className='divInterna'>
