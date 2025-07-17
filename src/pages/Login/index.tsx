@@ -37,7 +37,7 @@ export function Login() {
 
     return (
         <motion.div
-            initial={{ scaleY: 1.1, opacity: 1 }}
+            initial={{ scaleY: 1.12, opacity: 1 }}
             animate={{ scaleY: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
             style={{ transformOrigin: 'center' }}
