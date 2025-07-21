@@ -68,8 +68,6 @@ No vídeo abaixo demonstro o fluxo completo:
 4. Acesso à rota protegida
 5. Testes via Insomnia
 
-> *\[Inserir link do vídeo aqui]*
-
 ---
 
 ## ⚙️ Como Executar Localmente
