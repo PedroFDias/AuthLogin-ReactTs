@@ -17,7 +17,7 @@ export function Input({ placeholder, type ='text', icon, onChange , delay}: Inpu
             animate={{opacity:1, scale:1}}
             transition={{ duration: 0.5, delay: delay, ease: 'backOut' }}
             className='box'>
-            <input onChange={onChange} type={type} className='input' required/>
+            <input onChange={onChange} type={type} className='input' placeholder=" " required/>
             <label className='label'>{placeholder}</label>
             {icon}
         </motion.div>

@@ -63,7 +63,7 @@ export function Register() {
                     />
                     <div className='inputs'>
                         <Input delay={0.3} onChange={(e) => setNome(e.target.value)} type='nome' placeholder='Nome' icon={<CircleUserRound className='icon' color='rgb(11, 134, 172)'></CircleUserRound>}></Input>
-                        <Input delay={0.5} onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email' icon={<Mail className='icon' color='rgb(11, 134, 172)'></Mail>} />
+                        <Input delay={0.5} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Email' icon={<Mail className='icon' color='rgb(11, 134, 172)'></Mail>} />
                         <Input delay={0.7} onChange={(e) => setSenha(e.target.value)} type='password' placeholder='Senha' icon={<LockKeyhole className='icon' color='rgb(11, 134, 172)'></LockKeyhole>}></Input>
                     </div>
                     <motion.div 
