@@ -94,5 +94,12 @@ p {
     .form {
         width: 100% !important;
         padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form .inputs {
+        width: 100% !important;
     }
 }

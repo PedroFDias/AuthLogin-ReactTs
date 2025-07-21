@@ -1,4 +1,4 @@
-.divRegister{
+.divRegister {
     max-width: 1000px;
     backdrop-filter: blur(200px) !important;
     z-index: 1;
@@ -8,37 +8,38 @@
     padding: 18px;
 }
 
-.divInterna{
+.divInterna {
     width: 100%;
     box-sizing: border-box;
     padding: 5.5em 2.5em 4em 2.5em;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    overflow: visible; /* importante */
+    overflow: visible;
+    /* importante */
     gap: 70px;
     background-color: #f0f6fce8;
-    border-radius: 17px;  
+    border-radius: 17px;
 }
 
-.leftSide{
+.leftSide {
     max-width: 100%;
     height: auto;
     object-fit: contain;
 }
 
-div{
-    width: 50% ;
+div {
+    width: 50%;
 }
 
-.form{
+.form {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 50%;
     gap: 5px;
 
-    .inputs{
+    .inputs {
         gap: 5px;
         flex-direction: column;
         align-items: center;
@@ -46,7 +47,7 @@ div{
     }
 }
 
-.linkPagina{
+.linkPagina {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -54,27 +55,18 @@ div{
 }
 
 @media screen and (max-width: 400px) {
-    .divRegister{
+    .divRegister {
         width: 100% !important;
         padding: 0;
         height: 100%;
     }
 
     .divInterna {
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        padding: 0!important;
-        margin: 0;
-        display: flex;
-        justify-content: left;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        flex-direction: row;
-        overflow: visible;
-        /* importante */
-        gap: 0;
-        background-color: #f0f6fce8;
-        border-radius: 0px !important;
+        width: 100%;
+        padding: 1rem !important;
     }
 
     .leftSide {
@@ -84,5 +76,12 @@ div{
     .form {
         width: 100% !important;
         padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form .inputs {
+        width: 100% !important;
     }
 }
