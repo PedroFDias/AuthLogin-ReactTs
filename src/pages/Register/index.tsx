@@ -29,11 +29,11 @@ export function Register() {
                     password: senha
                 }
             )
-            toast.success("Registrado com sucesso!")
+            toast.success("Cadastrado com sucesso!")
             console.log(response.data)
         }
         catch {
-            toast.error("Erro ao cadastrar usuário!")
+            toast.error("Usuário ja cadastrado!")
         }
     }
 

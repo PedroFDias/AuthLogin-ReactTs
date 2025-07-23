@@ -32,7 +32,7 @@ export function Login() {
         }
         catch {
             console.log("erro")
-            toast.error("Erro ao realizado login!")
+            toast.error("Usuário não cadastrado!")
         }
     }
     
@@ -46,9 +46,9 @@ export function Login() {
             className='divLogin'>
             <div className='divInterna'>
                 <motion.div 
-                    initial={{ y:-25, scaleY: 0.92 }}
-                    animate={{ y: 0 , scaleY: 1}}
-                    transition={{ duration: 1, delay:0.3, ease: 'easeIn' }}
+                    initial={{opacity: 0, scale:0.9}}
+                    animate={{opacity:1, scale:1}}
+                    transition={{ duration: 1, delay:0.3, ease: 'backOut' }}
                     className='leftSide'>
                     <img src="/assets/img/mobile-encryption-animate.svg" alt="" />
                 </motion.div>
