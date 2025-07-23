@@ -1,69 +1,115 @@
-# React + TypeScript + Vite
+# AuthLogin - React + Spring Boot (JWT)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto fullstack de autenticação utilizando **Java Spring Boot**, **JWT** e **React com TypeScript**.
 
-Currently, two official plugins are available:
+## 🔒 Descrição
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O objetivo deste projeto foi estudar e implementar um sistema simples e completo de autenticação com **JWT (JSON Web Token)**, incluindo:
 
-## Expanding the ESLint configuration
+* Backend com **Spring Boot + Spring Security**
+* Frontend com **React + TypeScript**
+* Banco de dados SQL (PostgreSQL via Neon)
+* Hospedagem do backend na **AWS**
+* Deploy do frontend na **Vercel**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Tecnologias Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Backend
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* Java 17
+* Spring Boot
+* Spring Security
+* JWT (com.auth0\:java-jwt)
+* PostgreSQL (Neon)
+* JUnit para testes
+* SpringDoc OpenAPI (Swagger)
+
+### Frontend
+
+* React
+* TypeScript
+* Axios
+
+---
+
+## 📦 Funcionalidades
+
+* Registro de usuário
+* Login de usuário
+* Geração de token JWT
+* Acesso a rota protegida com autenticação via token
+* Validação do token no frontend
+* Controle de sessão e armazenamento do token
+* Logout
+
+---
+
+## 🔗 Acesse
+
+* **Frontend online:**
+  👉 [https://auth-login-react.vercel.app/](https://auth-login-react.vercel.app/)
+
+* **Swagger (Documentação da API):**
+  👉 [https://3.22.77.140:8443/swagger-ui/index.html#](https://3.22.77.140:8443/swagger-ui/index.html#)
+
+* **Backend hospedado na AWS**
+
+---
+
+## 📸 Demonstração
+
+No vídeo abaixo demonstro o fluxo completo:
+
+1. Registro
+2. Login
+3. Geração do token JWT
+4. Acesso à rota protegida
+5. Testes via Insomnia
+
+---
+
+## ⚙️ Como Executar Localmente
+
+### Backend
+
+1. Clone o repositório backend:
+
+```bash
+git clone https://github.com/PedroFDias/AuthLogin-ReactTs
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Configure o banco de dados PostgreSQL.
+3. Ajuste o `application.properties` com suas configurações de banco e porta.
+4. Execute o projeto via IDE ou comando Maven:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+./mvnw spring-boot:run
 ```
+
+### Frontend
+
+1. Instale as dependências:
+
+```bash
+npm install
+```
+
+2. Execute:
+
+```bash
+npm run dev
+```
+
+---
+
+## ✅ Contribuição
+
+Contribuições, sugestões ou melhorias são sempre bem-vindas!
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
