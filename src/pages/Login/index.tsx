@@ -32,7 +32,7 @@ export function Login() {
         }
         catch {
             console.log("erro")
-            toast.error("Usuário não cadastrado!")
+            toast.error("Usuário não cadastrado! API desligada!")
         }
     }
     

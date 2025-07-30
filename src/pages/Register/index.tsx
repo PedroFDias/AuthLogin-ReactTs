@@ -33,7 +33,7 @@ export function Register() {
             console.log(response.data)
         }
         catch {
-            toast.error("Usuário ja cadastrado!")
+            toast.error("Erro ao cadastrar! API desligada!")
         }
     }
 
